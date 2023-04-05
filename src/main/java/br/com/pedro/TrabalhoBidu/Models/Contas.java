@@ -19,21 +19,14 @@ public class Contas {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-  private int id;
+  private Integer idContas;
   private LocalDate dateConta;
   private BigDecimal valorConta;
 
   @ManyToOne
-  @JoinColumn(name = "id")
+  @JoinColumn(name = "idCliente")
   private Cliente cliente;
 
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
 
   public LocalDate getDateConta() {
     return dateConta;
@@ -59,11 +52,19 @@ public class Contas {
     this.cliente = cliente;
   }
 
+  public Integer getIdContas() {
+    return idContas;
+  }
+
+  public void setIdContas(Integer idContas) {
+    this.idContas = idContas;
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + id;
+    result = prime * result + ((idContas == null) ? 0 : idContas.hashCode());
     return result;
   }
 
@@ -76,10 +77,16 @@ public class Contas {
     if (getClass() != obj.getClass())
       return false;
     Contas other = (Contas) obj;
-    if (id != other.id)
+    if (idContas == null) {
+      if (other.idContas != null)
+        return false;
+    } else if (!idContas.equals(other.idContas))
       return false;
     return true;
   }
+
+
+
   
   
 }

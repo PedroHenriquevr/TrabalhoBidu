@@ -17,30 +17,30 @@ public class Cliente {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-  private int id;
+  private Integer idCliente;
   private String nomeCliente;
 
   @OneToMany(mappedBy = "cliente")
   private List<Contas> Contas = new ArrayList<>();
   
   
-  public int getId() {
-    return id;
-  }
-  public void setId(int id) {
-    this.id = id;
-  }
   public String getNomeCliente() {
     return nomeCliente;
   }
   public void setNomeCliente(String nomeCliente) {
     this.nomeCliente = nomeCliente;
   }
+  public Integer getIdCliente() {
+    return idCliente;
+  }
+  public void setIdCliente(Integer idCliente) {
+    this.idCliente = idCliente;
+  }
   @Override
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + id;
+    result = prime * result + ((idCliente == null) ? 0 : idCliente.hashCode());
     return result;
   }
   @Override
@@ -52,10 +52,15 @@ public class Cliente {
     if (getClass() != obj.getClass())
       return false;
     Cliente other = (Cliente) obj;
-    if (id != other.id)
+    if (idCliente == null) {
+      if (other.idCliente != null)
+        return false;
+    } else if (!idCliente.equals(other.idCliente))
       return false;
     return true;
   }
+
+  
 
   
 }
