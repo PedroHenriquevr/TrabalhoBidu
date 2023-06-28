@@ -1,6 +1,6 @@
 CREATE TABLE Contas (
-  idContas int not null AUTO_INCREMENT PRIMARY KEY,
-  dateConta Date not null,
-  valorConta decimal(12,2),
-  idCliente int not null
+  id_contas int not null AUTO_INCREMENT PRIMARY KEY,
+  date_conta Date not null,
+  valor_conta decimal(12,2),
+  id_cliente int not null
 );

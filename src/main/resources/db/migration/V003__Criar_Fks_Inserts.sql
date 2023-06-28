@@ -1,1 +1,1 @@
-ALTER TABLE Contas add CONSTRAINT FK_Contas_Cliente foreign key(idCliente) references Cliente(idCliente);
+ALTER TABLE Contas add CONSTRAINT FK_Contas_Cliente foreign key(id_cliente) references Cliente(id_cliente);

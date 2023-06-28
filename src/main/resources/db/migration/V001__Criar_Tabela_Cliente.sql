@@ -1,4 +1,4 @@
 CREATE TABLE Cliente(
-idCliente int not null AUTO_INCREMENT PRIMARY KEY,
-nomeCliente varchar(100) NOT NULL
+id_cliente int not null AUTO_INCREMENT PRIMARY KEY,
+nome_cliente varchar(100) NOT NULL
 );
