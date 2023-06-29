@@ -1,5 +1,7 @@
 package br.com.pedro.TrabalhoBidu.repository.filter;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -7,6 +9,7 @@ public class ContasFilter {
 
     private String nomeCliente;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateConta;
 
     private BigDecimal valorConta;
